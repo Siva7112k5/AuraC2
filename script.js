@@ -150,14 +150,14 @@ themeToggle.addEventListener('click', () => {
         localStorage.setItem('theme', 'dark');
     }
 });
-const logoImg = document.querySelector('.logo-icon img');
+/* const logoImg = document.querySelector('.logo-icon img');
 themeToggle.addEventListener('click', () => {
   if (body.classList.contains('light-mode')) {
     logoImg.src = 'logo-dark.png';
   } else {
     logoImg.src = 'logo.png';
   }
-});
+}); */
 // ===== Testimonials Carousel Logic =====
 (function() {
     const slides = document.querySelectorAll('.testimonial-slide');
