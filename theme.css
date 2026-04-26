@@ -1,0 +1,269 @@
+/* ========== Theme Toggle Button ========== */
+.theme-toggle {
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    z-index: 10000;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.25);
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(12px);
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    font-size: 1.4rem;
+}
+.theme-toggle:hover {
+    background: rgba(255,255,255,0.25);
+    transform: scale(1.08);
+}
+.theme-icon { transition: opacity 0.3s; }
+body.light-mode .theme-toggle .moon { display: none; }
+body:not(.light-mode) .theme-toggle .sun { display: none; }
+
+/* ========== Light Mode Overrides – Clean White ========== */
+body.light-mode {
+    background: #dbe4ee;  /* very soft off‑white, almost white */
+    color: #183059;
+}
+
+body.light-mode .bg-shapes .shape {
+    background: rgba(0,0,0,0.03);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.03);
+}
+
+/* ---------- Glass cards (light, airy) ---------- */
+body.light-mode .glass {
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(18px);
+    border: 1px solid rgba(0,0,0,0.05);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.04);
+    color: #222;
+}
+body.light-mode .glass:hover {
+    background: rgba(255,255,255,0.85);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.06);
+}
+
+/* ---------- Navigation ---------- */
+body.light-mode nav.glass {
+    background: rgba(255,255,255,0.6);
+    border: 1px solid rgba(0,0,0,0.04);
+}
+body.light-mode .nav-links a {
+    color: #2c3e50;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+body.light-mode .nav-links a:hover,
+body.light-mode .nav-links a.active {
+    color: #0f172a;
+    background: #dbe4ee;
+}
+
+/* ---------- Hero & Headings ---------- */
+body.light-mode h1, body.light-mode h2, body.light-mode h3,
+body.light-mode .hero-headline, body.light-mode .stat-number,
+body.light-mode .cta-text, body.light-mode .hero-brand-text strong,
+body.light-mode .section-heading, body.light-mode .section-title {
+    color: #0f172a;
+    text-shadow: none;
+}
+body.light-mode p, body.light-mode .hero-subhead,
+body.light-mode .stat-label, body.light-mode .hero-brand-text span,
+body.light-mode .feature-box h4, body.light-mode .feature-card h3,
+body.light-mode .feature-card p {
+    color: #334155;
+}
+body.light-mode .logo {
+    color: #0f172a;
+    text-shadow: none;
+}
+body.light-mode .logo-icon img {
+    filter: invert(1);
+}
+
+/* ---------- Buttons ---------- */
+body.light-mode .cta-button {
+    background: #c3d5cc;
+    border: 2px solid #0f172a;
+    color: #183059;
+    font-weight: 600;
+    transition: 0.3s;
+}
+body.light-mode .cta-button:hover {
+    background: #1e293b;
+    color: #fadf63;
+    border-color: #fadf63;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* ---------- Social Sidebar ---------- */
+body.light-mode .social-sidebar {
+    background: rgba(255,255,255,0.65);
+    border: 1px solid rgba(0,0,0,0.04);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.04);
+}
+body.light-mode .social-icon {
+    color: #475569;
+}
+body.light-mode .social-icon:hover {
+    background: rgba(0,0,0,0.05);
+    color: #0f172a;
+}
+
+/* ---------- Form elements ---------- */
+body.light-mode .form-group input,
+body.light-mode .form-group textarea,
+body.light-mode .chat-form input,
+body.light-mode .chat-form textarea {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    color: #0f172a;
+    transition: border-color 0.3s;
+}
+body.light-mode .form-group input:focus,
+body.light-mode .form-group textarea:focus,
+body.light-mode .chat-form input:focus,
+body.light-mode .chat-form textarea:focus {
+    border-color: #0f172a;
+    outline: none;
+}
+body.light-mode .form-group input::placeholder,
+body.light-mode .form-group textarea::placeholder,
+body.light-mode .chat-form input::placeholder,
+body.light-mode .chat-form textarea::placeholder {
+    color: #94a3b8;
+}
+body.light-mode .form-group label {
+    color: #475569;
+    font-weight: 600;
+}
+
+/* ---------- Footer ---------- */
+body.light-mode .footer-content { color: #475569; }
+body.light-mode .footer-links a { color: #475569; }
+body.light-mode .footer-links a:hover { color: #0f172a; }
+body.light-mode .copyright { color: #64748b; }
+
+/* ---------- Team, Services, Contact, Stats ---------- */
+body.light-mode .team-member h3, body.light-mode .team-member .role,
+body.light-mode .team-member .bio, body.light-mode .team-section h2,
+body.light-mode .service-card h3, body.light-mode .service-card p,
+body.light-mode .service-features li, body.light-mode .contact-info h2,
+body.light-mode .contact-item-text h4, body.light-mode .contact-item-text p,
+body.light-mode .contact-form h2, body.light-mode .stat-card .stat-number,
+body.light-mode .stat-card .stat-label {
+    color: #0f172a;
+    text-shadow: none;
+}
+body.light-mode .team-social a { color: #475569; }
+body.light-mode .team-social a:hover {
+    color: #0f172a;
+    background: rgba(0,0,0,0.05);
+}
+body.light-mode .service-features li:before { color: #64748b; }
+
+/* ---------- Pricing ---------- */
+body.light-mode .pricing-card h3{
+    color: #d4af37;
+    text-shadow: none;
+}
+body.light-mode .pricing-card .price{
+    color: #0f172a;
+}
+body.light-mode .pricing-card ul li {
+    color: #0f2a1f;
+}
+body.light-mode .pricing-card ul li {
+    border-bottom: 1px solid #6b8ebb;
+}
+
+/* ---------- Testimonials ---------- */
+body.light-mode .testimonials .section-heading { color: #0f172a; text-shadow: none; }
+body.light-mode .quote { color: #334155; }
+body.light-mode .client-info strong { color: #0f172a; }
+body.light-mode .client-info span { color: #64748b; }
+body.light-mode .dot { background: #cbd5e1; }
+body.light-mode .dot.active { background: #0f172a; }
+
+/* ---------- Chat Pill ---------- */
+body.light-mode .chat-toggle {
+    background: rgba(255,255,255,0.8);
+    color: #0f172a;
+    border: 1px solid #e2e8f0;
+}
+body.light-mode .chat-toggle:hover {
+    background: #ffffff;
+}
+body.light-mode .chat-popup {
+    background: rgba(255,255,255,0.9);
+    border: 1px solid #e2e8f0;
+}
+body.light-mode .chat-header h3 { color: #0f172a; }
+body.light-mode .chat-close { color: #0f172a; }
+body.light-mode .chat-form input,
+body.light-mode .chat-form textarea {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    color: #0f172a;
+}
+body.light-mode .chat-form input::placeholder,
+body.light-mode .chat-form textarea::placeholder { color: #94a3b8; }
+body.light-mode .chat-send-btn {
+    background: #0f172a;
+    border: 1px solid #0f172a;
+    color: white;
+    font-weight: 600;
+}
+body.light-mode .chat-send-btn:hover {
+    background: #1e293b;
+    border-color: #1e293b;
+}
+
+/* ---------- Typing Cursor ---------- */
+body.light-mode .cursor { color: #0f172a; }
+
+/* ---------- Work / Portfolio ---------- */
+body.light-mode .section-title { color: #0f172a; text-shadow: none; }
+body.light-mode .filter-btn {
+    background: rgba(255,255,255,0.9);
+    border: 1px solid #e2e8f0;
+    color: #334155;
+}
+body.light-mode .filter-btn.active,
+body.light-mode .filter-btn:hover {
+    background: #0f172a;
+    border-color: #0f172a;
+    color: white;
+}
+body.light-mode .work-info h3 { color: #0f172a; }
+body.light-mode .work-category {
+    background: #f1f5f9;
+    color: #0f172a;
+}
+body.light-mode .work-info p { color: #475569; }
+
+/* ---------- Scroll‑to‑top ---------- */
+body.light-mode .scroll-to-top {
+    background: rgba(255,255,255,0.8);
+    color: #0f172a;
+    border: 1px solid #e2e8f0;
+}
+body.light-mode .scroll-to-top:hover {
+    background: #ffffff;
+}
+
+/* General fallback ece9c0 */
+body.light-mode,
+body.light-mode p,
+body.light-mode li,
+body.light-mode span:not(.theme-icon):not(.cursor) {
+    color: #334155;
+}
