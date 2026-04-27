@@ -412,3 +412,47 @@ themeToggle.addEventListener('click', () => {
         });
     });
 })();
+
+// ===== Mobile Menu Toggle (UPDATED) =====
+(function() {
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    console.log('menuToggle:', menuToggle);
+    console.log('navLinks:', navLinks);
+
+    if (!menuToggle || !navLinks) return;
+
+    menuToggle.addEventListener('click', (e) => {
+        e.stopPropagation(); // Prevent event from bubbling
+        navLinks.classList.toggle('show');
+        menuToggle.classList.toggle('active');
+        
+        // Prevent body scroll when menu is open
+        if (navLinks.classList.contains('show')) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+        
+        console.log('Menu toggled, navLinks classes:', navLinks.classList);
+    });
+
+    // Close menu when a link is clicked
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('show');
+            menuToggle.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('nav') && navLinks.classList.contains('show')) {
+            navLinks.classList.remove('show');
+            menuToggle.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
+})();

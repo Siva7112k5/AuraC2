@@ -45,22 +45,31 @@
     <!-- Navigation Header -->
     <header>
         <div class="container">
-            <nav class="glass">
-           <div class="logo" onclick="showPage('home')">
-    <div class="logo-icon">
-        <img src="logo.png" alt="AURA CODE CORE Logo" />
+           <nav class="glass">
+    <div class="logo" onclick="showPage('home')">
+        <div class="logo-icon">
+            <img src="logo.png" alt="AURA CODE CORE Logo" />
+        </div>
+        <span>AURA CODE CORE</span>
     </div>
-    <span>AURA CODE CORE</span>
-</div>
-                <div class="nav-links">
-                    <a href="#" onclick="showPage('home')" class="active">Home</a>
-                    <a href="#" onclick="showPage('about')">About</a>
-                    <a href="#" onclick="showPage('services')">Services</a>
-                    <a href="#" onclick="showPage('pricing')">Pricing</a>
-                    <a href="#" onclick="showPage('work')">Work</a>
-                    <a href="#" onclick="showPage('contact')">Contact</a>
-                </div>
-            </nav>
+
+    <!-- Hamburger menu toggle (visible only on mobile) -->
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </button>
+
+    <!-- Navigation links -->
+    <div class="nav-links" id="navLinks">
+        <a href="#" onclick="showPage('home')" class="active">Home</a>
+        <a href="#" onclick="showPage('about')">About</a>
+        <a href="#" onclick="showPage('services')">Services</a>
+        <a href="#" onclick="showPage('pricing')">Pricing</a>
+        <a href="#" onclick="showPage('work')">Work</a>
+        <a href="#" onclick="showPage('contact')">Contact</a>
+    </div>
+</nav>
         </div>
     </header>
 
