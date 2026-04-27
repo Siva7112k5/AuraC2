@@ -601,3 +601,139 @@ nav.glass {
         overflow: visible !important;
     }
 }
+/* ==========================================
+   COMPLETE LOGO & NAV FIX FOR MOBILE
+   ========================================== */
+
+/* Logo base styles */
+.logo {
+    font-size: 28px; 
+    font-weight: bold; 
+    color: rgb(238, 240, 241); 
+    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    display: flex; 
+    align-items: center; 
+    gap: 12px; 
+    cursor: pointer;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+.logo-icon { 
+    width: 55px; 
+    height: 55px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    flex-shrink: 0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.logo-icon img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: contain;
+    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3)); 
+    transition: all 0.3s ease; 
+}
+
+.logo:hover .logo-icon img { 
+    transform: scale(1.1) translateY(-2px); 
+}
+
+/* Header spacing */
+header { 
+    padding: 15px 20px 0 20px; /* Top padding, no bottom */
+}
+
+/* Nav spacing - adds 20px gap below */
+nav.glass {
+    padding: 15px 25px;
+    margin-bottom: 20px !important; /* THE 20px GAP */
+    position: relative;
+    overflow: visible !important;
+    z-index: 1000;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    header {
+        padding: 10px 10px 0 10px;
+    }
+    
+    nav.glass {
+        padding: 12px 15px;
+        margin-bottom: 20px !important; /* Keep 20px gap */
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 55px;
+    }
+
+    .logo {
+        font-size: 16px;
+        gap: 8px;
+        max-width: calc(100% - 55px);
+    }
+
+    .logo span {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .logo-icon {
+        width: 38px;
+        height: 38px;
+        min-width: 38px;
+    }
+
+    .logo-icon img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .menu-toggle {
+        display: flex;
+        flex-shrink: 0;
+        width: 38px;
+        height: 38px;
+        min-width: 38px;
+        margin-left: 8px;
+    }
+
+    .page {
+        padding-top: 10px;
+    }
+}
+
+/* Extra small screens */
+@media (max-width: 380px) {
+    .logo {
+        font-size: 14px;
+        gap: 6px;
+    }
+
+    .logo-icon {
+        width: 32px;
+        height: 32px;
+        min-width: 32px;
+    }
+
+    nav.glass {
+        padding: 10px 12px;
+        margin-bottom: 20px !important;
+    }
+}
+
+/* Light mode */
+body.light-mode .logo {
+    color: #0f172a;
+    text-shadow: none;
+}
+
+body.light-mode .logo-icon img {
+    filter: brightness(0.2) saturate(100%) drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+}
